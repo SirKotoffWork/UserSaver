@@ -1,0 +1,18 @@
+﻿@model UserSaver.DAL.Model.User
+
+
+<div class="box">
+    <form asp-action="Edit" asp-controller="home" asp-route-id="@Model.Id">
+        <input class="text-dark align-content-center" required asp-for="Name" min="1" max="1478" placeholder="Name" type="text" />
+        <input class="text-dark align-content-center" required asp-for="Years" min="1" max="120" placeholder="Years" type="number" />
+        <select required asp-for="Car">       
+            <option value="BMW">BMW</option>
+            <option value="VW">VW</option>
+            <option value="Honda">Honda</option>
+            <option value="Honda">Volvo</option>
+            <option value="Honda">Subaru</option>
+            <option value="Honda">Toyota</option>
+        </select> 
+        <input id="send" type="submit" name="send" class="text-white" value="Send" />
+    </form>
+</div>

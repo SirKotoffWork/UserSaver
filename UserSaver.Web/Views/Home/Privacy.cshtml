@@ -1,0 +1,31 @@
+﻿@model IEnumerable<UserSaver.DAL.Model.User>
+@{
+    ViewData["Title"] = "List of users";
+}
+<h1 class="text-white">@ViewData["Title"]</h1>
+
+@foreach (var a in Model)
+{
+    <br />
+    <div class="col-4">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <p class="card-text">
+                    Name: @a.Name<br />
+                </p>
+                <p class="card-text">
+                    Years: @a.Years<br />
+                </p>
+                <p class="card-text">
+                    Car: @a.Car<br />
+                </p>
+
+                <form asp-controller="Home" asp-action="Delete" method="post"  asp-route-id="@a.Id">
+                    <input class="btn btn-danger" type="submit" value="Delete" />
+                </form>
+
+                <a asp-action="Edit" asp-controller="Home" asp-route-id="@a.Id" class="btn btn-success">Edit</a>
+            </div>
+        </div>
+    </div>
+}
