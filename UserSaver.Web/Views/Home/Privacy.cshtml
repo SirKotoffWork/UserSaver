@@ -19,11 +19,9 @@
                 <p class="card-text">
                     Car: @a.Car<br />
                 </p>
-
                 <form asp-controller="Home" asp-action="Delete" method="post"  asp-route-id="@a.Id">
                     <input class="btn btn-danger" type="submit" value="Delete" />
                 </form>
-
                 <a asp-action="Edit" asp-controller="Home" asp-route-id="@a.Id" class="btn btn-success">Edit</a>
             </div>
         </div>
